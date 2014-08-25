@@ -106,13 +106,44 @@ if ($day_4 == "true") {
 	$totalPrice += $sharedPrice;
 }
 
-//return the two colums
-echo($descCol . "</div>");
+//RETURN PRICES AND ORDER BTN
 
-if ($day_1 == ($day1_booked? 'true' : 'false') && $day_2 == ($day2_booked? 'true' : 'false') && $day_3 == ($day3_booked? 'true' : 'false') && $day_4 == ($day4_booked? 'true' : 'false')) {
-	echo($priceCol . '<hr class="black"> <h4>€ ' . number_format($totalPrice,2) . ' </h4></div>'); }
+if ($day_1 == 'false' && $day_2 == 'false' && $day_3 == 'false' && $day_4 == 'false') {
 
-else {
+	echo('<div id="pricing"><div class="col-md-4"></div>');
+	echo($priceCol . '<button type="button" class="btn btn-danger btn-block" name="order"> <span class="glyphicon glyphicon-remove"></span> Verwijder reservatie</button> </div><img id="sad_giraffe" src="images/sad_giraffe.png" alt="sad_giraffe" />' . '<script>
+
+function notify() {
+		var day1 = $("#day1").is(".selected");
+        var day2 = $("#day2").is(".selected");
+        var day3 = $("#day3").is(".selected");
+        var day4 = $("#day4").is(".selected");
+        
+
+        
+        $.ajax({
+	        url: "scripts/order.php", 
+	        type: "POST",
+	        data: {day_1: day1, day_2: day2, day_3: day3, day_4: day4},
+	        dataType: "html",
+	        success: function(data){
+	        	window.location.href = "scripts/order_booked.php?day_1=" + day1 + "&day_2=" + day2 + "&day_3=" + day3 + "&day_4=" + day4;
+	        	
+	        }
+	    });
+}
+
+$( "button" ).on( "click", notify );
+
+
+</script>'); 
+
+
+} elseif ($day_1 == ($day1_booked? 'true' : 'false') && $day_2 == ($day2_booked? 'true' : 'false') && $day_3 == 'false' && $day_4 == 'false') {
+	echo($descCol . "</div>");
+	echo($priceCol . '<hr class="black"> <h4>€ ' . number_format($totalPrice,2) . ' </h4></div>'); 
+} else {
+	echo($descCol . "</div>");
 	echo($priceCol . '<hr class="black"> <h4>€ ' . number_format($totalPrice,2) . ' </h4> <button type="button" class="btn btn-primary btn-block" name="order"> <span class="glyphicon glyphicon-pencil"></span> Wijzig reservatie</button> </div>' . '<script>
 
 function notify() {
@@ -129,7 +160,7 @@ function notify() {
 	        data: {day_1: day1, day_2: day2, day_3: day3, day_4: day4},
 	        dataType: "html",
 	        success: function(data){
-	        	window.location.href = "scripts/order.php?day_1=" + day1 + "&day_2=" + day2 + "&day_3=" + day3 + "&day_4=" + day4;
+	        	window.location.href = "scripts/order_booked.php?day_1=" + day1 + "&day_2=" + day2 + "&day_3=" + day3 + "&day_4=" + day4;
 	        	
 	        }
 	    });

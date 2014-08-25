@@ -133,6 +133,19 @@ include("../topbar.php");
 
 -->
 
+<div class="row" id="paying">
+	<div class="col-md-1">
+	  
+	</div>
+	  
+
+	<div class="col-md-10">
+		<div class="title" id="info"> <h1>Betalen</h1></div>
+		  
+			
+	</div>
+</div>
+
 <div class="row" id="order">
 	<div class="col-md-9">
 	  

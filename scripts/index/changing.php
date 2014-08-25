@@ -37,25 +37,25 @@ $row_bookings = mysqli_fetch_array($bookings);
   
 	<!-- THE DAY SELECTION PAGE -->  
   <div class="row">
-      <div class="col-md-3 <?php if ($row_bookings['day1']) {echo("booked selected");} ?> " id="day1">
+      <div class="col-md-3 <?php if ($row_bookings['day1']) {echo("booked selected");} else if ($day1 >= 8) {echo("full");} ?> " id="day1">
 	      <h1>Ma-Di</h1>
 	      <h2>01 sept</h2>
 	      <hr>
 	      <h3><b><?php echo($day1); ?></b>/8</h3>
       </div>
-      <div class="col-md-3 <?php if ($row_bookings['day2']) {echo("booked selected");} ?> " id="day2">
+      <div class="col-md-3 <?php if ($row_bookings['day2']) {echo("booked selected");} else if ($day2 >= 8) {echo("full");}  ?> " id="day2">
 	      <h1>Di-Wo</h1>
 	      <h2>02 sept</h2>
 	      <hr>
 	      <h3><b><?php echo($day2); ?></b>/8</h3>
       </div>
-      <div class="col-md-3 <?php if ($row_bookings['day3']) {echo("booked selected");} ?> " id="day3">
+      <div class="col-md-3 <?php if ($row_bookings['day3']) {echo("booked selected");} else if ($day3 >= 8) {echo("full");}  ?> " id="day3">
 	      <h1>Wo-Do</h1>
 	      <h2>03 sept</h2>
 	      <hr>
 	      <h3><b><?php echo($day3); ?></b>/8</h3>
 	  </div>
-      <div class="col-md-3 <?php if ($row_bookings['day4']) {echo("booked selected");} ?> " id="day4">
+      <div class="col-md-3 <?php if ($row_bookings['day4']) {echo("booked selected");} else if ($day4 >= 8) {echo("full");} ?> " id="day4">
 	      <h1>Do-Vr</h1>
 	      <h2>04 sept</h2>
 	      <hr>
