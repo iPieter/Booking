@@ -39,8 +39,7 @@
                 id, 
                 username, 
                 password, 
-                salt, 
-                email 
+                salt 
             FROM users 
             WHERE 
                 username = :username 

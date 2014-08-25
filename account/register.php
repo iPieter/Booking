@@ -66,19 +66,6 @@
             die("This username is already in use"); 
         } 
          
-        // Now we perform the same type of check for the email address, in order 
-        // to ensure that it is unique. 
-        $query = " 
-            SELECT 
-                1 
-            FROM users 
-            WHERE 
-                email = :email 
-        "; 
-         
-        $query_params = array( 
-            ':email' => $_POST['email'] 
-        ); 
          
         try 
         { 
@@ -92,10 +79,7 @@
          
         $row = $stmt->fetch(); 
          
-        if($row) 
-        { 
-            die("This email address is already registered"); 
-        } 
+
          
         // An INSERT query is used to add new rows to a database table. 
         // Again, we are using special tokens (technically called parameters) to 
@@ -104,14 +88,12 @@
             INSERT INTO users ( 
                 username, 
                 password, 
-                salt, 
-                email 
-            ) VALUES ( 
+                salt
+                ) VALUES ( 
                 :username, 
                 :password, 
-                :salt, 
-                :email 
-            ) 
+                :salt
+                ) 
         "; 
          
         // A salt is randomly generated here to protect again brute force attacks 
@@ -148,7 +130,6 @@
             ':username' => $_POST['username'], 
             ':password' => $password, 
             ':salt' => $salt, 
-            ':email' => $_POST['email'] 
         ); 
          
         try 
@@ -178,9 +159,6 @@
 <form action="register.php" method="post"> 
     Username:<br /> 
     <input type="text" name="username" value="" /> 
-    <br /><br /> 
-    E-Mail:<br /> 
-    <input type="text" name="email" value="" /> 
     <br /><br /> 
     Password:<br /> 
     <input type="password" name="password" value="" /> 

@@ -24,7 +24,7 @@
           <ul class="dropdown-menu" role="menu">
             <li><a href="#">Bekijk reservatie</a></li>
             <li class="divider"></li>
-            <li><a href="#">Uitloggen</a></li>
+            <li><a href="account/logout.php">Uitloggen</a></li>
           </ul>
         </li>
       </ul>
