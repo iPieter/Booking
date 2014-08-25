@@ -38,7 +38,6 @@ if ($row_booked['booked'] == false) {
 	include("scripts/index/booking.php");
 } else {
 	include("scripts/index/changing.php");
-	
 }
 
 ?>
