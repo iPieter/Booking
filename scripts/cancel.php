@@ -36,7 +36,7 @@ $day3_booked = $row_bookings['day3'];
 $day4_booked = $row_bookings['day4'];
 
 //set the days in the database
-mysqli_query($con,"UPDATE `Booking`.`users` SET `day1` = $day_1, `day2` = $day_2, `day3` = $day_3, `day4` = $day_4, `booked` = '1' WHERE `users`.`username` = '$username';");
+mysqli_query($con,"UPDATE `Booking`.`users` SET `day1` = $day_1, `day2` = $day_2, `day3` = $day_3, `day4` = $day_4, `booked` = '0' WHERE `users`.`username` = '$username';");
 
 //SET THE DAY PROPERTIES
 //THE DATA FOR THE FOUR DATES
@@ -108,6 +108,6 @@ while ($row_days = mysqli_fetch_array($days)) {
 
 ?>
 
-<h1>GERESERVEERD</h1>
+<h1>RESERVERING GEANNULEERD</h1>
 
 </body>

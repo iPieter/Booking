@@ -88,7 +88,7 @@ $row_bookings = mysqli_fetch_array($bookings);
 		if ($day_1) {
 			$price = mysqli_query($con,"SELECT * FROM days WHERE day=1");
 			$row_price = mysqli_fetch_array($price);
-			$sharedPrice = round($row_price['totalPrice'] / ($row_price['guests']),2,PHP_ROUND_HALF_UP);
+			$sharedPrice = number_format(round($row_price['totalPrice'] / ($row_price['guests']),2,PHP_ROUND_HALF_UP),2);
 			
 			//add the description
 			$descCol .= "<p>Maandag 01/09, overnachting tot dinsdag</p>";
@@ -100,7 +100,7 @@ $row_bookings = mysqli_fetch_array($bookings);
 		if($day_2) {
 			$price = mysqli_query($con,"SELECT * FROM days WHERE day=2");
 			$row_price = mysqli_fetch_array($price);
-			$sharedPrice = round($row_price['totalPrice'] / ($row_price['guests']),2,PHP_ROUND_HALF_UP) ;
+			$sharedPrice = number_format(round($row_price['totalPrice'] / ($row_price['guests']),2,PHP_ROUND_HALF_UP),2) ;
 			
 			//add the description
 			$descCol .= "<p>Dinsdag 02/09, overnachting tot woensdag</p>";
@@ -112,7 +112,7 @@ $row_bookings = mysqli_fetch_array($bookings);
 		if ($day_3) {
 			$price = mysqli_query($con,"SELECT * FROM days WHERE day=3");
 			$row_price = mysqli_fetch_array($price);
-			$sharedPrice = round($row_price['totalPrice'] / ($row_price['guests']),2,PHP_ROUND_HALF_UP) ;
+			$sharedPrice = number_format(round($row_price['totalPrice'] / ($row_price['guests']),2,PHP_ROUND_HALF_UP),2) ;
 			
 			//add the description
 			$descCol .= "<p>Woensdag 03/09, overnachting tot donderdag</p>";
@@ -124,7 +124,7 @@ $row_bookings = mysqli_fetch_array($bookings);
 		if ($day_4) {
 			$price = mysqli_query($con,"SELECT * FROM days WHERE day=4");
 			$row_price = mysqli_fetch_array($price);
-			$sharedPrice = round($row_price['totalPrice'] / ($row_price['guests']),2,PHP_ROUND_HALF_UP) ;
+			$sharedPrice = number_format(round($row_price['totalPrice'] / ($row_price['guests']),2,PHP_ROUND_HALF_UP),2) ;
 			
 			//add the description
 			$descCol .= "<p>Donderdag 04/09, overnachting tot vrijdag</p>";

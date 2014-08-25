@@ -34,10 +34,10 @@ if ($day_1 == "true") {
 	
 	//check if this day is already booked or if it should reduce the price by 1 guest
 	if ($day1_booked) {
-		$sharedPrice = round($row_price['totalPrice'] / ($row_price['guests']),2,PHP_ROUND_HALF_UP);
+		$sharedPrice = number_format(round($row_price['totalPrice'] / ($row_price['guests']),2,PHP_ROUND_HALF_UP),2);
 		$descCol .= "<p>Maandag 01/09, overnachting tot dinsdag</p>";
 	} else {
-		$sharedPrice = round($row_price['totalPrice'] / ($row_price['guests'] + 1),2,PHP_ROUND_HALF_UP);
+		$sharedPrice = number_format(round($row_price['totalPrice'] / ($row_price['guests'] + 1),2,PHP_ROUND_HALF_UP),2);
 		$descCol .= '<p><span class="glyphicon glyphicon-plus-sign"></span> Maandag 01/09, overnachting tot dinsdag</p>';		
 		
 	}
@@ -54,10 +54,10 @@ if($day_2 == "true") {
 
 	//check if this day is already booked or if it should reduce the price by 1 guest	
 	if ($day2_booked) {
-		$sharedPrice = round($row_price['totalPrice'] / ($row_price['guests']),2,PHP_ROUND_HALF_UP);
+		$sharedPrice = number_format(round($row_price['totalPrice'] / ($row_price['guests']),2,PHP_ROUND_HALF_UP),2);
 		$descCol .= "<p>Dinsdag 02/09, overnachting tot woensdag</p>";
 	} else {
-		$sharedPrice = round($row_price['totalPrice'] / ($row_price['guests'] + 1),2,PHP_ROUND_HALF_UP);
+		$sharedPrice = number_format(round($row_price['totalPrice'] / ($row_price['guests'] + 1),2,PHP_ROUND_HALF_UP),2);
 		$descCol .= '<p><span class="glyphicon glyphicon-plus-sign"></span> Dinsdag 02/09, overnachting tot woensdag</p>';		
 		
 	}
@@ -74,10 +74,10 @@ if ($day_3 == "true") {
 	
 	//check if this day is already booked or if it should reduce the price by 1 guest	
 	if ($day3_booked) {
-		$sharedPrice = round($row_price['totalPrice'] / ($row_price['guests']),2,PHP_ROUND_HALF_UP);
+		$sharedPrice = number_format(round($row_price['totalPrice'] / ($row_price['guests']),2,PHP_ROUND_HALF_UP),2);
 		$descCol .= "<p>Woensdag 03/09, overnachting tot donderdag</p>";
 	} else {
-		$sharedPrice = round($row_price['totalPrice'] / ($row_price['guests'] + 1),2,PHP_ROUND_HALF_UP);
+		$sharedPrice = number_format(round($row_price['totalPrice'] / ($row_price['guests'] + 1),2,PHP_ROUND_HALF_UP),2);
 		$descCol .= '<p><span class="glyphicon glyphicon-plus-sign"></span> Woensdag 03/09, overnachting tot donderdag</p>';		
 	}
 	
@@ -93,10 +93,10 @@ if ($day_4 == "true") {
 
 	//check if this day is already booked or if it should reduce the price by 1 guest	
 	if ($day4_booked) {
-		$sharedPrice = round($row_price['totalPrice'] / ($row_price['guests']),2,PHP_ROUND_HALF_UP);
+		$sharedPrice = number_format(round($row_price['totalPrice'] / ($row_price['guests']),2,PHP_ROUND_HALF_UP),2);
 		$descCol .= "<p>Donderdag 04/09, overnachting tot vrijdag</p>";
 	} else {
-		$sharedPrice = round($row_price['totalPrice'] / ($row_price['guests'] + 1),2,PHP_ROUND_HALF_UP);
+		$sharedPrice = number_format(round($row_price['totalPrice'] / ($row_price['guests'] + 1),2,PHP_ROUND_HALF_UP),2);
 		$descCol .= '<p><span class="glyphicon glyphicon-plus-sign"></span> Donderdag 04/09, overnachting tot vrijdag</p>';		
 		
 	}
@@ -122,12 +122,12 @@ function notify() {
 
         
         $.ajax({
-	        url: "scripts/order.php", 
+	        url: "scripts/cancel.php", 
 	        type: "POST",
 	        data: {day_1: day1, day_2: day2, day_3: day3, day_4: day4},
 	        dataType: "html",
 	        success: function(data){
-	        	window.location.href = "scripts/order_booked.php?day_1=" + day1 + "&day_2=" + day2 + "&day_3=" + day3 + "&day_4=" + day4;
+	        	window.location.href = "scripts/cancel.php?day_1=" + day1 + "&day_2=" + day2 + "&day_3=" + day3 + "&day_4=" + day4;
 	        	
 	        }
 	    });
@@ -155,7 +155,7 @@ function notify() {
 
         
         $.ajax({
-	        url: "scripts/order.php", 
+	        url: "scripts/order_booked.php", 
 	        type: "POST",
 	        data: {day_1: day1, day_2: day2, day_3: day3, day_4: day4},
 	        dataType: "html",

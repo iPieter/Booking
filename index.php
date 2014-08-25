@@ -30,7 +30,6 @@ include("topbar.php");
 
 
 //include the booking or changing page, based on booked=true or false
-
 $booked = mysqli_query($con,"SELECT booked FROM users WHERE `users`.`username` = '$username';");
 $row_booked = mysqli_fetch_array($booked);
 

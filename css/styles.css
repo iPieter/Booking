@@ -77,6 +77,10 @@ p {
 	
 }
 
+.tabs {
+	margin: 20px;
+}
+
 .full {
 	background: repeating-linear-gradient(
   45deg,
@@ -99,6 +103,13 @@ p {
 	border-top: 2px solid #ec9e1e;
 }
 
+#cash {
+	padding: 15px;
+}
+
+#transfer {
+	padding-top: 15px;
+}
 
 .booked hr {
 	border-top: 2px solid rgb(41, 128, 185);

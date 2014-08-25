@@ -60,10 +60,10 @@ include("../topbar.php");
 		  		
 		  		//check if this day is already booked or if it should reduce the price by 1 guest
 		  		if ($day1_booked) {
-		  			$sharedPrice = round($row_price['totalPrice'] / ($row_price['guests']),2,PHP_ROUND_HALF_UP);
+		  			$sharedPrice = number_format(round($row_price['totalPrice'] / ($row_price['guests']),2,PHP_ROUND_HALF_UP),2);
 		  			$descCol .= "<p>Maandag 01/09, overnachting tot dinsdag</p>";
 		  		} else {
-		  			$sharedPrice = round($row_price['totalPrice'] / ($row_price['guests'] + 1),2,PHP_ROUND_HALF_UP);
+		  			$sharedPrice = number_format(round($row_price['totalPrice'] / ($row_price['guests'] + 1),2,PHP_ROUND_HALF_UP),2);
 		  			$descCol .= '<p><span class="glyphicon glyphicon-plus-sign"></span> Maandag 01/09, overnachting tot dinsdag</p>';		
 		  			
 		  		}
@@ -80,10 +80,10 @@ include("../topbar.php");
 		  	
 		  		//check if this day is already booked or if it should reduce the price by 1 guest	
 		  		if ($day2_booked) {
-		  			$sharedPrice = round($row_price['totalPrice'] / ($row_price['guests']),2,PHP_ROUND_HALF_UP);
+		  			$sharedPrice = number_format(round($row_price['totalPrice'] / ($row_price['guests']),2,PHP_ROUND_HALF_UP),2);
 		  			$descCol .= "<p>Dinsdag 02/09, overnachting tot woensdag</p>";
 		  		} else {
-		  			$sharedPrice = round($row_price['totalPrice'] / ($row_price['guests'] + 1),2,PHP_ROUND_HALF_UP);
+		  			$sharedPrice = number_format(round($row_price['totalPrice'] / ($row_price['guests'] + 1),2,PHP_ROUND_HALF_UP),2);
 		  			$descCol .= '<p><span class="glyphicon glyphicon-plus-sign"></span> Dinsdag 02/09, overnachting tot woensdag</p>';		
 		  			
 		  		}
@@ -100,10 +100,10 @@ include("../topbar.php");
 		  		
 		  		//check if this day is already booked or if it should reduce the price by 1 guest	
 		  		if ($day3_booked) {
-		  			$sharedPrice = round($row_price['totalPrice'] / ($row_price['guests']),2,PHP_ROUND_HALF_UP);
+		  			$sharedPrice = number_format(round($row_price['totalPrice'] / ($row_price['guests']),2,PHP_ROUND_HALF_UP),2);
 		  			$descCol .= "<p>Woensdag 03/09, overnachting tot donderdag</p>";
 		  		} else {
-		  			$sharedPrice = round($row_price['totalPrice'] / ($row_price['guests'] + 1),2,PHP_ROUND_HALF_UP);
+		  			$sharedPrice = number_format(round($row_price['totalPrice'] / ($row_price['guests'] + 1),2,PHP_ROUND_HALF_UP),2);
 		  			$descCol .= '<p><span class="glyphicon glyphicon-plus-sign"></span> Woensdag 03/09, overnachting tot donderdag</p>';		
 		  		}
 		  		
@@ -119,10 +119,10 @@ include("../topbar.php");
 		  	
 		  		//check if this day is already booked or if it should reduce the price by 1 guest	
 		  		if ($day4_booked) {
-		  			$sharedPrice = round($row_price['totalPrice'] / ($row_price['guests']),2,PHP_ROUND_HALF_UP);
+		  			$sharedPrice = number_format(round($row_price['totalPrice'] / ($row_price['guests']),2,PHP_ROUND_HALF_UP),2);
 		  			$descCol .= "<p>Donderdag 04/09, overnachting tot vrijdag</p>";
 		  		} else {
-		  			$sharedPrice = round($row_price['totalPrice'] / ($row_price['guests'] + 1),2,PHP_ROUND_HALF_UP);
+		  			$sharedPrice = number_format(round($row_price['totalPrice'] / ($row_price['guests'] + 1),2,PHP_ROUND_HALF_UP),2);
 		  			$descCol .= '<p><span class="glyphicon glyphicon-plus-sign"></span> Donderdag 04/09, overnachting tot vrijdag</p>';		
 		  			
 		  		}
@@ -139,55 +139,10 @@ include("../topbar.php");
 	  </div>
   </div>
 </div>
-</div>
-<div class="row" id="information">
-	<div class="col-md-1">
-	  
-	</div>
-	  
-	<div class="col-md-10">
-		<div class="title" id="info"> <h1>Algemene informatie</h1></div>
-		  
-		  <div class="col-md-2"><b>Uur van aankomst:</b></div><div class="col-md-10"><div href="#" data-toggle="tooltip" title="Enkel van toepassing indien de volgende dag volledig volzet is" id="arival">Na 11:00</div></div>
-
-
-		  <div class="col-md-2"><b>Uur van vertrek:</b></div><div class="col-md-10">Voor 11:00 (Enkel van toepassing indien de volgende dag volledig volzet is)</div>
-		  <div class="col-md-2"><b>Bedlinnen en handdoeken:</b></div><div class="col-md-10">Bedlinnen en handdoeken dienen zelf meegebracht te worden. Hoeslakens voor de matrassen, overtrekken voor de donsdekens en kussenslopen vallen hier onder.</div>
-	
-	<div class="col-md-2"><b>Kamers:</b></div><div class="col-md-10">1x 2-persoonsbed, 4x 1-persoonsbed, 2x 1-persoonsboxpring die tegen elkaar kunnen worden geplaatst.</div>
-	</div>
 
 </div>
-</div>
-<!--
-<div class="row" id="terms">
-	<div class="col-md-1">
-	  
-	</div>
-	  
+<?php include("order_data.php"); ?>
 
-	<div class="col-md-10">
-		<div class="title" id="info"> <h1>Voorwaarden</h1></div>
-		  
-			
-	</div>
-</div>
-
--->
-
-<div class="row" id="order">
-	<div class="col-md-9">
-	  
-	</div>
-	  
-	<div class="col-md-2">
-		
-<button type="button" class="btn btn-primary btn-block" name="order"> 
-	<span class="glyphicon glyphicon-ok"></span> Reservatie bevestigen</button> </div>
-
-
-</div>
-</div>
 <script>
 //$('#arival').tooltip('show');
 function notify() {
