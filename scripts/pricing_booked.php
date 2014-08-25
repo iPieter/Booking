@@ -139,7 +139,7 @@ $( "button" ).on( "click", notify );
 </script>'); 
 
 
-} elseif ($day_1 == ($day1_booked? 'true' : 'false') && $day_2 == ($day2_booked? 'true' : 'false') && $day_3 == 'false' && $day_4 == 'false') {
+} elseif ($day_1 == ($day1_booked? 'true' : 'false') && $day_2 == ($day2_booked? 'true' : 'false') && $day_3 == ($day3_booked? 'true' : 'false') && $day_4 == ($day4_booked? 'true' : 'false')) {
 	echo($descCol . "</div>");
 	echo($priceCol . '<hr class="black"> <h4>€ ' . number_format($totalPrice,2) . ' </h4></div>'); 
 } else {
