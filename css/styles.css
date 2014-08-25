@@ -53,6 +53,12 @@ h4 {
 
 #order button {
 	margin-top: 20px;
+	margin-bottom: 20px;
+
+}
+
+#paying {
+	margin-bottom: 15px;
 }
 
 p {
@@ -120,6 +126,13 @@ p {
 	margin-left: 25%;
 	margin-right: 25%;
 	margin-top: 10px;
+}
+
+#giraffe {
+	width: 30%;
+	margin-left: 35%;
+	margin-right: 35%;
+	margin-top: 10px;	
 }
 
 #information .col-md-2, .col-md-10 {

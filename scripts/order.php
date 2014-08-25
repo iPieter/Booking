@@ -40,6 +40,11 @@ include("../topbar.php");
 		  	
 		  	$totalPrice = 0;
 		  	
+		  	$username = htmlentities($_SESSION['user']['username'], ENT_QUOTES, 'UTF-8');
+
+		  	
+		  	mysqli_query($con,"INSERT INTO `Booking`.`logins` (`username`, `page`) VALUES ('$username', 'scripts/order.php');");
+
 		  	
 		  	//CALCULATE PRICES
 		  	//day 1
@@ -100,6 +105,18 @@ include("../topbar.php");
 </div>
 
 <?php include("order_data.php"); ?>
+
+<div class="row" id="order">
+	<div class="col-md-9">
+	  
+	</div>
+	  
+	<div class="col-md-2">
+		
+<button type="button" class="btn btn-primary btn-block" name="order"> 
+	<span class="glyphicon glyphicon-ok"></span> Reservatie bevestigen</button> </div>
+</div>
+</div>
 
 <script>
 //$('#arival').tooltip('show');

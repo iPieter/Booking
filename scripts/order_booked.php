@@ -43,6 +43,9 @@ include("../topbar.php");
 		  	//get the booking information of each day
 		  	$username = htmlentities($_SESSION['user']['username'], ENT_QUOTES, 'UTF-8');
 		  	
+		  	mysqli_query($con,"INSERT INTO `Booking`.`logins` (`username`, `page`) VALUES ('$username', 'scripts/order_booked.php');");
+
+		  	
 		  	$bookings = mysqli_query($con,"SELECT * FROM users WHERE `users`.`username` = '$username';");
 		  	$row_bookings = mysqli_fetch_array($bookings);
 		  	
@@ -142,6 +145,18 @@ include("../topbar.php");
 
 </div>
 <?php include("order_data.php"); ?>
+
+<div class="row" id="order">
+	<div class="col-md-9">
+	  
+	</div>
+	  
+	<div class="col-md-2">
+		
+<button type="button" class="btn btn-primary btn-block" name="order"> 
+	<span class="glyphicon glyphicon-pencil"></span> Wijziging bevestigen</button> </div>
+</div>
+</div>
 
 <script>
 //$('#arival').tooltip('show');

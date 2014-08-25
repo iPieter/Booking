@@ -26,6 +26,9 @@ $day_4 = $_GET["day_4"];
 
 $username = htmlentities($_SESSION['user']['username'], ENT_QUOTES, 'UTF-8');
 
+mysqli_query($con,"INSERT INTO `Booking`.`logins` (`username`, `page`) VALUES ('$username', 'finish.php');");
+
+
 //set the days in the database
 mysqli_query($con,"UPDATE `Booking`.`users` SET `day1` = $day_1, `day2` = $day_2, `day3` = $day_3, `day4` = $day_4, `booked` = '1' WHERE `users`.`username` = '$username';");
 
@@ -63,6 +66,6 @@ while ($row_days = mysqli_fetch_array($days)) {
 
 ?>
 
-<h1>GERESERVEERD</h1>
+<h1 class="center">Reservatie ontvangen</h1><img id="giraffe" src="../images/giraffe.png" alt="giraffe" />
 
 </body>

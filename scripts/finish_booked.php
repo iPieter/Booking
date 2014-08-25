@@ -27,6 +27,9 @@ $day_4 = $_GET["day_4"];
 //get the booking information of each day
 $username = htmlentities($_SESSION['user']['username'], ENT_QUOTES, 'UTF-8');
 
+mysqli_query($con,"INSERT INTO `Booking`.`logins` (`username`, `page`) VALUES ('$username', 'finish_booking.php');");
+
+
 $bookings = mysqli_query($con,"SELECT * FROM users WHERE `users`.`username` = '$username';");
 $row_bookings = mysqli_fetch_array($bookings);
 
@@ -108,6 +111,5 @@ while ($row_days = mysqli_fetch_array($days)) {
 
 ?>
 
-<h1>GERESERVEERD</h1>
-
+<h1 class="center">Reservatie ontvangen</h1><img id="giraffe" src="../images/giraffe.png" alt="giraffe" />
 </body>

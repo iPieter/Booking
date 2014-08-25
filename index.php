@@ -14,7 +14,7 @@
 <?php 
 // First we execute our common code to connection to the database and start the session 
 require("scripts/common.php"); 
-require("scripts/datalogin.php"); 
+require("scripts/datalogin.php");
 // At the top of the page we check to see whether the user is logged in or not 
 if(empty($_SESSION['user'])) 
 { 
@@ -27,6 +27,8 @@ if(empty($_SESSION['user']))
 }
 
 include("topbar.php");
+
+mysqli_query($con,"INSERT INTO `Booking`.`logins` (`username`, `page`) VALUES ('$username', 'index.php');");
 
 
 //include the booking or changing page, based on booked=true or false

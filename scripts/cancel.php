@@ -108,6 +108,6 @@ while ($row_days = mysqli_fetch_array($days)) {
 
 ?>
 
-<h1>RESERVERING GEANNULEERD</h1>
+<h1 class="center">Reservatie verwijderd</h1><img id="giraffe" src="../images/sad_giraffe.png" alt="giraffe" />
 
 </body>

@@ -16,7 +16,7 @@
 	</div>
 
 </div>
-</div>
+
 <!--
 <div class="row" id="terms">
 	<div class="col-md-1">
@@ -53,7 +53,7 @@
 		    <div class="tab-pane active" id="transfer">
 			    <div class="col-md-2"><b>Rekening:</b></div><div class="col-md-10">BE17 0016 2663 3921</div>
 			    <div class="col-md-2"><b>Bedrag:</b></div><div class="col-md-10">€ <?php echo number_format($totalPrice,2); ?></div>
-			    <div class="col-md-2"><b>Mededeling:</b></div><div class="col-md-10">Zee <b><?php echo $username ?></b></div>
+			    <div class="col-md-2"><b>Mededeling:</b></div><div class="col-md-10">Boeking zee <?php echo $username ?></div>
 
 		    </div>
 
@@ -62,18 +62,5 @@
 		  </div>	
 		  </div>
 	</div>
-</div>
-
-<div class="row" id="order">
-	<div class="col-md-9">
-	  
-	</div>
-	  
-	<div class="col-md-2">
-		
-<button type="button" class="btn btn-primary btn-block" name="order"> 
-	<span class="glyphicon glyphicon-ok"></span> Reservatie bevestigen</button> </div>
-
-
 </div>
 </div>

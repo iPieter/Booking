@@ -111,7 +111,7 @@ if ($day_4 == "true") {
 if ($day_1 == 'false' && $day_2 == 'false' && $day_3 == 'false' && $day_4 == 'false') {
 
 	echo('<div id="pricing"><div class="col-md-4"></div>');
-	echo($priceCol . '<button type="button" class="btn btn-danger btn-block" name="order"> <span class="glyphicon glyphicon-remove"></span> Verwijder reservatie</button> </div><img id="sad_giraffe" src="images/sad_giraffe.png" alt="sad_giraffe" />' . '<script>
+	echo($priceCol . '<button type="button" class="btn btn-danger btn-block" name="order"> <span class="glyphicon glyphicon-remove"></span> Verwijder reservatie</button> </div>' . '<script>
 
 function notify() {
 		var day1 = $("#day1").is(".selected");
