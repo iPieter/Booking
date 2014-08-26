@@ -97,6 +97,12 @@ p {
 );
 }
 
+.inforow {
+	padding-left: 15px;
+	padding-right: 15px;
+
+}
+
 #prices {
 	text-align: right;
 }

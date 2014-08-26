@@ -6,13 +6,13 @@
 	<div class="col-md-10">
 		<div class="title" id="info"> <h1>Algemene informatie</h1></div>
 		  
-		  <div class="col-md-2"><b>Uur van aankomst:</b></div><div class="col-md-10"><div href="#" data-toggle="tooltip" title="Enkel van toepassing indien de volgende dag volledig volzet is" id="arival">Na 16:00</div></div>
+		  <div class="row inforow"><div class="col-md-2"><b>Uur van aankomst:</b></div><div class="col-md-10"><div href="#" data-toggle="tooltip" title="Enkel van toepassing indien de volgende dag volledig volzet is" id="arival">Na 16:00</div></div></div>
 
 
-		  <div class="col-md-2"><b>Uur van vertrek:</b></div><div class="col-md-10">Voor 11:00 (Enkel van toepassing indien de volgende dag volledig volzet is)</div>
-		  <div class="col-md-2"><b>Bedlinnen en handdoeken:</b></div><div class="col-md-10">Bedlinnen en handdoeken dienen zelf meegebracht te worden. Hoeslakens voor de matrassen, overtrekken voor de donsdekens en kussenslopen vallen hier onder.</div>
+		  <div class="row inforow"><div class="col-md-2"><b>Uur van vertrek:</b></div><div class="col-md-10">Voor 11:00 (Enkel van toepassing indien de volgende dag volledig volzet is)</div></div>
+		  <div class="row inforow"><div class="col-md-2"><b>Bedlinnen en handdoeken:</b></div><div class="col-md-10">Bedlinnen en handdoeken dienen zelf meegebracht te worden. Hoeslakens voor de matrassen, overtrekken voor de donsdekens en kussenslopen vallen hier onder.</div></div>
 	
-	<div class="col-md-2"><b>Kamers:</b></div><div class="col-md-10">1x 2-persoonsbed, 4x 1-persoonsbed, 2x 1-persoonsboxpring die tegen elkaar kunnen worden geplaatst.</div>
+		  <div class="row inforow"><div class="col-md-2"><b>Kamers:</b></div><div class="col-md-10">1x 2-persoonsbed, 4x 1-persoonsbed, 2x 1-persoonsboxpring die tegen elkaar kunnen worden geplaatst.</div></div>
 	</div>
 
 </div>
