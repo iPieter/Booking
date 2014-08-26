@@ -41,7 +41,7 @@ include("../topbar.php");
 
 <?php
 
-$visitors =  mysqli_query($con,"SELECT * FROM logins");
+$visitors =  mysqli_query($con,"SELECT * FROM logins ORDER  BY id DESC LIMIT 30");
 
 while ($row_visitors = mysqli_fetch_array($visitors)) {
 	
