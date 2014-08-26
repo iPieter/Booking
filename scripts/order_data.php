@@ -6,7 +6,7 @@
 	<div class="col-md-10">
 		<div class="title" id="info"> <h1>Algemene informatie</h1></div>
 		  
-		  <div class="col-md-2"><b>Uur van aankomst:</b></div><div class="col-md-10"><div href="#" data-toggle="tooltip" title="Enkel van toepassing indien de volgende dag volledig volzet is" id="arival">Na 11:00</div></div>
+		  <div class="col-md-2"><b>Uur van aankomst:</b></div><div class="col-md-10"><div href="#" data-toggle="tooltip" title="Enkel van toepassing indien de volgende dag volledig volzet is" id="arival">Na 16:00</div></div>
 
 
 		  <div class="col-md-2"><b>Uur van vertrek:</b></div><div class="col-md-10">Voor 11:00 (Enkel van toepassing indien de volgende dag volledig volzet is)</div>
