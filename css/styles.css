@@ -97,11 +97,7 @@ p {
 );
 }
 
-.inforow {
-	padding-left: 15px;
-	padding-right: 15px;
 
-}
 
 #prices {
 	text-align: right;
@@ -114,6 +110,17 @@ p {
 .full hr {
 	border-top: 2px solid #ec9e1e;
 }
+
+.pricing{
+	padding-left: 15px;
+	padding-right: 15px;
+
+}
+
+.inforow{
+	padding-left: 15px;
+	padding-right: 15px;
+} 
 
 #cash {
 	padding: 15px;

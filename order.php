@@ -42,8 +42,7 @@ include("topbar.php");
 			$day_4 = $row_bookings['day4'];
 		  	
 		  	//Set the variables
-		  	$descCol = '<div id="pricing"><div class="col-md-10">';
-		  	$priceCol = '<div class="col-md-2" id="prices">';
+		  	$desc = "";
 		  	
 		  	$totalPrice = 0;
 		  			  	
@@ -56,8 +55,8 @@ include("topbar.php");
 		  		$sharedPrice = number_format(round($row_price['totalPrice'] / ($row_price['guests']),2,PHP_ROUND_HALF_UP),2);
 		  		
 		  		//add the description
-		  		$descCol .= "<p>Maandag 01 september, met overnachting tot dinsdag 02 september</p>";
-		  		$priceCol .= "<p>€ " . $sharedPrice . "</p>";
+		  		$desc .= "<div class='row pricing'><div class='col-md-10'><p>Maandag 01 september, met overnachting tot dinsdag 02 september</p></div>";
+		  		$desc .= "<div class='col-md-2' id='prices'><p>€ " . $sharedPrice . "</p></div></div>";
 		  		$totalPrice += $sharedPrice;
 		  	}
 		  	
@@ -68,8 +67,8 @@ include("topbar.php");
 		  		$sharedPrice = number_format(round($row_price['totalPrice'] / ($row_price['guests']),2,PHP_ROUND_HALF_UP),2) ;
 		  		
 		  		//add the description
-		  		$descCol .= "<p>Dinsdag 02 september, met overnachting tot woensdag 03 september</p>";
-		  		$priceCol .= "<p>€ " . $sharedPrice . "</p>";
+		  		$desc .= "<div class='row pricing'><div class='col-md-10'><p>Dinsdag 02 september, met overnachting tot woensdag 03 september</p></div>";
+		  		$desc .= "<div class='col-md-2' id='prices'><p>€ " . $sharedPrice . "</p></div></div>";
 		  		$totalPrice += $sharedPrice;
 		  	}
 		  	
@@ -80,8 +79,8 @@ include("topbar.php");
 		  		$sharedPrice = number_format(round($row_price['totalPrice'] / ($row_price['guests']),2,PHP_ROUND_HALF_UP),2) ;
 		  		
 		  		//add the description
-		  		$descCol .= "<p>Woensdag 03 september, met overnachting tot donderdag 04 september</p>";
-		  		$priceCol .= "<p>€ " . $sharedPrice . "</p>";
+		  		$desc .= "<div class='row pricing'><div class='col-md-10'><p>Woensdag 03 september, met overnachting tot donderdag 04 september</p></div>";
+		  		$desc .= "<div class='col-md-2' id='prices'><p>€ " . $sharedPrice . "</p></div></div>";
 		  		$totalPrice += $sharedPrice;
 		  	}
 		  	
@@ -92,20 +91,18 @@ include("topbar.php");
 		  		$sharedPrice = number_format(round($row_price['totalPrice'] / ($row_price['guests']),2,PHP_ROUND_HALF_UP),2) ;
 		  		
 		  		//add the description
-		  		$descCol .= "<p>Donderdag 04 september, met overnachting tot vrijdag 05 september</p>";
-		  		$priceCol .= "<p>€ " . $sharedPrice . "</p>";
+		  		$desc .= "<div class='row pricing' ><div class='col-md-10'><p>Donderdag 04 september, met overnachting tot vrijdag 05 september</p></div>";
+		  		$desc .= "<div class='col-md-2' id='prices'><p>€ " . $sharedPrice . "</p></div></div>";
 		  		$totalPrice += $sharedPrice;
 		  	}
 		  	
 		  	//return the two colums
-		  	echo($descCol . "</div>");
-		  	echo($priceCol . '<hr class="black"> <h4>€ ' . number_format($totalPrice,2) . ' </h4> ');
+		  	echo($desc . "");
+		  	echo('<div class="row" id="pricing"><div class="col-md-10"></div><div class="col-md-2" id="prices"><hr class="black"> <h4>€ ' . number_format($totalPrice,2) . ' </h4> </div></div>');
 		  	?>
 	  </div>
   </div>
-</div>
 
-</div>
 <?php include("scripts/order_data.php"); ?>
 
 </body>
