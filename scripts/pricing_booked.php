@@ -120,17 +120,8 @@ function notify() {
         var day4 = $("#day4").is(".selected");
         
 
-        
-        $.ajax({
-	        url: "scripts/cancel.php", 
-	        type: "POST",
-	        data: {day_1: day1, day_2: day2, day_3: day3, day_4: day4},
-	        dataType: "html",
-	        success: function(data){
-	        	window.location.href = "scripts/cancel.php?day_1=" + day1 + "&day_2=" + day2 + "&day_3=" + day3 + "&day_4=" + day4;
-	        	
-	        }
-	    });
+	    window.location.href = "scripts/cancel.php?day_1=" + day1 + "&day_2=" + day2 + "&day_3=" + day3 + "&day_4=" + day4;
+
 }
 
 $( "button" ).on( "click", notify );
@@ -152,18 +143,8 @@ function notify() {
         var day3 = $("#day3").is(".selected");
         var day4 = $("#day4").is(".selected");
         
+        window.location.href = "scripts/order_booked.php?day_1=" + day1 + "&day_2=" + day2 + "&day_3=" + day3 + "&day_4=" + day4;
 
-        
-        $.ajax({
-	        url: "scripts/order_booked.php", 
-	        type: "POST",
-	        data: {day_1: day1, day_2: day2, day_3: day3, day_4: day4},
-	        dataType: "html",
-	        success: function(data){
-	        	window.location.href = "scripts/order_booked.php?day_1=" + day1 + "&day_2=" + day2 + "&day_3=" + day3 + "&day_4=" + day4;
-	        	
-	        }
-	    });
 }
 
 $( "button" ).on( "click", notify );

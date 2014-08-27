@@ -175,18 +175,7 @@ function notify() {
 	var day3 = <?php echo $day_3; ?>;
 	var day4 = <?php echo $day_4; ?>;
 	
-	
-	
-	$.ajax({
-	    url: "finish_booked.php", 
-	    type: "POST",
-	    data: {day_1: day1, day_2: day2, day_3: day3, day_4: day4},
-	    dataType: "html",
-	    success: function(data){
-	    	window.location.href = "finish_booked.php?day_1=" + day1 + "&day_2=" + day2 + "&day_3=" + day3 + "&day_4=" + day4;
-	        	
-	        }
-	    });
+	window.location.href = "finish_booked.php?day_1=" + day1 + "&day_2=" + day2 + "&day_3=" + day3 + "&day_4=" + day4;
 }
 
 $( "button" ).on( "click", notify );

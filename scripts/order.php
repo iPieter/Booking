@@ -49,7 +49,7 @@ include("../topbar.php");
 			    $ip = $_SERVER['REMOTE_ADDR'];
 			}
 			
-			mysqli_query($con,"INSERT INTO `Booking`.`logins` (`username`, `ip`, `page`) VALUES ('$username', '$ip',zz 'scripts/order.php');");
+			mysqli_query($con,"INSERT INTO `Booking`.`logins` (`username`, `ip`, `page`) VALUES ('$username', '$ip', 'scripts/order.php');");
 
 		  	
 		  	//CALCULATE PRICES
@@ -131,18 +131,8 @@ function notify() {
 	var day3 = <?php echo $day_3; ?>;
 	var day4 = <?php echo $day_4; ?>;
 	
-	
-	
-	$.ajax({
-	    url: "finish.php", 
-	    type: "POST",
-	    data: {day_1: day1, day_2: day2, day_3: day3, day_4: day4},
-	    dataType: "html",
-	    success: function(data){
-	    	window.location.href = "finish.php?day_1=" + day1 + "&day_2=" + day2 + "&day_3=" + day3 + "&day_4=" + day4;
-	        	
-	        }
-	    });
+	window.location.href = "finish.php?day_1=" + day1 + "&day_2=" + day2 + "&day_3=" + day3 + "&day_4=" + day4;
+	        
 }
 
 $( "button" ).on( "click", notify );
