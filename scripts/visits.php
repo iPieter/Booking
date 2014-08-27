@@ -37,7 +37,7 @@ include("../topbar.php");
   <div class="panel-heading"><h1>Bezoekers</h1></div>
 
 <table class="table table-striped">
-<tr><th>#</th><th>Gebruikersnaam</th><th>Datum en tijd</th><th>Pagina</th></tr>
+<tr><th>#</th><th>Gebruikersnaam</th><th>Datum en tijd</th><th>Pagina</th><th>IP-adres</th></tr>
 
 <?php
 
@@ -45,7 +45,7 @@ $visitors =  mysqli_query($con,"SELECT * FROM logins ORDER  BY id DESC LIMIT 30"
 
 while ($row_visitors = mysqli_fetch_array($visitors)) {
 	
-	echo "<tr><td>" . $row_visitors['id'] . "</td><td>". $row_visitors['username'] . "</td><td>".$row_visitors['dtime'] . "</td><td> <a href='../".$row_visitors['page'] . "'>" . $row_visitors['page']. "</td></tr>";
+	echo "<tr><td>" . $row_visitors['id'] . "</td><td>". $row_visitors['username'] . "</td><td>".$row_visitors['dtime'] . "</td><td> <a href='../".$row_visitors['page'] . "'>" . $row_visitors['page']."</td><td>". $row_visitors['ip'] . "</td></tr>";
 }
 
 ?>
@@ -56,4 +56,26 @@ while ($row_visitors = mysqli_fetch_array($visitors)) {
   </div>
   </div>
 </div>
+
+<script>
+
+var tid = setInterval(refresh, 5*60*1000);
+
+function refresh() {
+$.ajax({
+    url: "ajax_visits.php", 
+    type: "POST",
+    data: {},
+    dataType: 'html',
+    success: function(data){
+    	var d = new Date();
+    	$('.table').html(data);
+    	$('.panel-heading').html("<h1>Bezoekers</h1><div class='refresh'>Gegevens ververst om " + (('0' + d.getHours()).slice(-2)) + ":" + (('0' + d.getMinutes()).slice(-2)) + ":" + (('0' + d.getSeconds()).slice(-2)) +"</div>");
+        
+    }
+});
+
+};
+
+</script>
 </body> 
