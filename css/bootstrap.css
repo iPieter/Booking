@@ -982,13 +982,11 @@ hr {
 }
 
 h2,
-h5,
 h6,
 .h1,
 .h2,
 .h3,
 .h4,
-.h5,
 .h6 {
   font-family: inherit;
   font-weight: 500;
@@ -1067,10 +1065,6 @@ h2,
   font-size: 26px;
 }
 
-h5,
-.h5 {
-  font-size: 14px;
-}
 h6,
 .h6 {
   font-size: 12px;

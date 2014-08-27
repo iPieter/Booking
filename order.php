@@ -105,8 +105,30 @@ include("topbar.php");
 		  	}
 		  	
 		  	//return the two colums
-		  	echo($desc . "");
-		  	echo('<div class="row" id="pricing"><div class="col-md-10"></div><div class="col-md-2" id="prices"><hr class="black"> <h4>€ ' . number_format($totalPrice,2) . ' </h4> </div></div>');
+		  	$desc .= '<div class="row pricing" id="pricing"><div class="col-md-8"></div><div class="col-md-2"><p class="high">Totaal</p></div><div class="col-md-2" id="prices"><hr class="black"> <h4>€ ' . number_format($totalPrice,2) . ' </h4> </div></div>';
+		  	
+		  	//check if the user already payed
+		  	$payed = mysqli_query($con,"SELECT payed, amount FROM users WHERE `users`.`username` = '$username';");
+			$row_payed = mysqli_fetch_array($payed);
+			
+			if ($row_payed['payed']) {
+
+				$desc .= "<div class='row pricing' ><div class='col-md-8'></div><div class='col-md-2'><p>Betaald</p></div>";
+		  		$desc .= "<div class='col-md-2' id='prices'><p>€ " . $row_payed['amount'] . "</p></div></div>";
+		  		
+		  		if (($totalPrice - $row_payed['amount']) > 0) {
+						$desc .= "<div class='row pricing' ><div class='col-md-8'></div><div class='col-md-2'><p class='high'>Nog te betalen</p></div>";
+				}
+				else {
+						$desc .= "<div class='row pricing' ><div class='col-md-8'></div><div class='col-md-2'><p class='high'>Teruggave</p></div>";
+
+					}
+		  		
+		  		$desc .= '<div class="col-md-2" id="prices"><hr class="black"><h5>€ ' .  number_format($totalPrice - $row_payed['amount'],2) . '</h5></div></div>';
+
+			}
+		  	
+		  	echo $desc;
 		  	?>
 	  </div>
   </div>
