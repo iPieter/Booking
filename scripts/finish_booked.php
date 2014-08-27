@@ -27,7 +27,16 @@ $day_4 = $_GET["day_4"];
 //get the booking information of each day
 $username = htmlentities($_SESSION['user']['username'], ENT_QUOTES, 'UTF-8');
 
-mysqli_query($con,"INSERT INTO `Booking`.`logins` (`username`, `page`) VALUES ('$username', 'finish_booking.php');");
+//get the ip
+if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+    $ip = $_SERVER['HTTP_CLIENT_IP'];
+} elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+    $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+} else {
+    $ip = $_SERVER['REMOTE_ADDR'];
+}
+
+mysqli_query($con,"INSERT INTO `Booking`.`logins` (`username`, `ip`, `page`) VALUES ('$username', '$ip', 'scripts/finish_booking.php');");
 
 
 $bookings = mysqli_query($con,"SELECT * FROM users WHERE `users`.`username` = '$username';");
