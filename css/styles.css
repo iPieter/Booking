@@ -171,7 +171,36 @@ p {
 	margin-top: 5px;
 }
 
+.weather .icon {
+	font-family: 'weather';
+	font-size: 30px;
+	display: inline;
+}
 
+.booked .weather .min {
+	color: #bfe7ff;
+	display: inline;
+	font-size: 18px;
+}
+
+
+.full .weather .min {
+	color: #c0392b;
+	display: inline;
+	font-size: 18px;
+}
+
+.weather .min {
+	color: #7f8c8d;
+	display: inline;
+	font-size: 18px;
+}
+
+.weather {
+	font-weight: 300;
+	font-size: 20px;
+	display: inline;
+}
 
 .center {
 	text-align: center;

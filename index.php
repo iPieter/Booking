@@ -51,4 +51,5 @@ if ($row_booked['booked'] == false) {
 }
 
 ?>
+
 </body> 
