@@ -24,7 +24,7 @@
  <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <?php 
-            if ($username == 'Pieter Delobelle') { echo '<li><a href="/booking/scripts/visits.php">Bezoekers</a></li>';} 
+            if ($username == 'Pieter Delobelle') { echo '<li><a href="/booking/scripts/visits.php">Bezoekers</a></li><li><a href="/booking/scripts/overview.php">Reservaties</a></li><li class="divider"></li>';} 
             if ($row_booked['booked'] == true) { echo '<li><a href="/booking/order.php">Bekijk reservatie</a></li><li class="divider"></li>';} 
             
             ?>
