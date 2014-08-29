@@ -39,7 +39,7 @@ while ($row_days = mysqli_fetch_array($days)) {
 	      <hr>
 	      <h3><b><?php echo($day1); ?></b>/8</h3>
 	      <hr>
-	      <div class="weather"><div class="icon">C</div> 21&deg <div class="min"> 15&deg</div></div>	      
+	      <div class="weather"><div class="icon">C</div> 21&deg <div class="min"> 13&deg</div></div>	      
       </div>
       <div class="col-md-3 <?php if ($day2 >= 8) {echo("full");} ?> " id="day2">
 	      <h1>Di-Wo</h1>
@@ -47,7 +47,7 @@ while ($row_days = mysqli_fetch_array($days)) {
 	      <hr>
 	      <h3><b><?php echo($day2); ?></b>/8</h3>
 	      <hr>
-	      <div class="weather"><div class="icon">C</div> 22&deg <div class="min"> 16&deg</div></div>
+	      <div class="weather"><div class="icon">C</div> 22&deg <div class="min"> 15&deg</div></div>
       </div>
       <div class="col-md-3 <?php if ($day3 >= 8) {echo("full");} ?> " id="day3">
 	      <h1>Wo-Do</h1>
@@ -55,7 +55,7 @@ while ($row_days = mysqli_fetch_array($days)) {
 	      <hr>
 	      <h3><b><?php echo($day3); ?></b>/8</h3>
 	      <hr>
-	      <div class="weather"><div class="icon">A</div> 22&deg <div class="min"> 16&deg</div></div>
+	      <div class="weather"><div class="icon">A</div> 22&deg <div class="min"> 15&deg</div></div>
 	  </div>
       <div class="col-md-3 <?php if ($day4 >= 8) {echo("full");} ?> " id="day4">
 	      <h1>Do-Vr</h1>

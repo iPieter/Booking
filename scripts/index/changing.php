@@ -43,7 +43,7 @@ $row_bookings = mysqli_fetch_array($bookings);
 	      <hr>
 	      <h3><b><?php echo($day1); ?></b>/8</h3>
 	      <hr>
-	      <div class="weather"><div class="icon">C</div> 21&deg <div class="min"> 15&deg</div></div>
+	      <div class="weather"><div class="icon">C</div> 21&deg <div class="min"> 13&deg</div></div>
       </div>
       <div class="col-md-3 <?php if ($row_bookings['day2']) {echo("booked selected");} else if ($day2 >= 8) {echo("full");}  ?> " id="day2">
 	      <h1>Di-Wo</h1>
@@ -51,7 +51,7 @@ $row_bookings = mysqli_fetch_array($bookings);
 	      <hr>
 	      <h3><b><?php echo($day2); ?></b>/8</h3>
 	      <hr>
-	      <div class="weather"><div class="icon">C</div> 22&deg <div class="min"> 16&deg</div></div>
+	      <div class="weather"><div class="icon">C</div> 22&deg <div class="min"> 15&deg</div></div>
       </div>
       <div class="col-md-3 <?php if ($row_bookings['day3']) {echo("booked selected");} else if ($day3 >= 8) {echo("full");}  ?> " id="day3">
 	      <h1>Wo-Do</h1>
@@ -59,7 +59,7 @@ $row_bookings = mysqli_fetch_array($bookings);
 	      <hr>
 	      <h3><b><?php echo($day3); ?></b>/8</h3>
 	      <hr>
-	      <div class="weather"><div class="icon">A</div> 22&deg <div class="min"> 16&deg</div></div>
+	      <div class="weather"><div class="icon">A</div> 22&deg <div class="min"> 15&deg</div></div>
 	  </div>
       <div class="col-md-3 <?php if ($row_bookings['day4']) {echo("booked selected");} else if ($day4 >= 8) {echo("full");} ?> " id="day4">
 	      <h1>Do-Vr</h1>
