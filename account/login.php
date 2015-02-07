@@ -136,7 +136,6 @@
         	<option>Emma</option>
         	<option>Loes</option>
         	<option>Gerben</option>
-        	<option>Gertjan</option>
         	<option>Arnaud</option>
         	<option>Aurelie</option>
         	<option>Andere personen, waaronder Boris</option>

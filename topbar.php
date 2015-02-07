@@ -4,7 +4,7 @@
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
 
-      <a class="navbar-brand" href="/booking/">Giraffen Aan Zee</a>
+      <a class="navbar-brand" href="/booking/">Giraffen Op Reis</a>
     </div>
 
 
@@ -15,17 +15,13 @@
 			$username = htmlentities($_SESSION['user']['username'], ENT_QUOTES, 'UTF-8');
 			echo($username);
 			
-			$booked = mysqli_query($con,"SELECT booked FROM users WHERE `users`.`username` = '$username';");
-			$row_booked = mysqli_fetch_array($booked);
-
-			
 	
 		?>
  <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <?php 
-            if ($username == 'Pieter Delobelle') { echo '<li><a href="/booking/scripts/visits.php">Bezoekers</a></li><li><a href="/booking/scripts/overview.php">Reservaties</a></li><li class="divider"></li>';} 
-            if ($row_booked['booked'] == true) { echo '<li><a href="/booking/order.php">Bekijk reservatie</a></li><li class="divider"></li>';} 
+            if ($username == 'Pieter Delobelle') { echo '<li><a href="/booking/scripts/visits.php">Bezoekers</a></li><li><a href="/booking/scripts/overview.php">Bestemmingen</a></li><li><a href="/booking/scripts/view_votes.php">Stemmen</a></li><li class="divider"></li>';} 
+            //if ($row_booked['destinationID'] != 0) { echo '<li><a href="/booking/order.php">Bekijk suggestie</a></li><li class="divider"></li>';} 
             
             ?>
             <li><a href="/booking/account/logout.php">Uitloggen</a></li>

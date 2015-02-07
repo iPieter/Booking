@@ -1,8 +1,8 @@
 <html>
 <head>
-	<title>Giraffen Aan Zee</title>
+	<title>Giraffen Op Reis</title>
 	
-	<link href='http://fonts.googleapis.com/css?family=Cutive+Mono|Open+Sans:100,300,500' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Playfair+Display|Open+Sans:100,300,500' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
 	
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -41,13 +41,13 @@ mysqli_query($con,"INSERT INTO `Booking`.`logins` (`username`, `ip`, `page`) VAL
 
 
 //include the booking or changing page, based on booked=true or false
-$booked = mysqli_query($con,"SELECT booked FROM users WHERE `users`.`username` = '$username';");
-$row_booked = mysqli_fetch_array($booked);
+$booked = mysqli_query($con,"SELECT * FROM votes WHERE `votes`.`name` = '$username';");
 
-if ($row_booked['booked'] == false) {
-	include("scripts/index/booking.php");
+
+if (mysqli_fetch_array($booked) == false) {
+	include("scripts/index/vote.php");
 } else {
-	include("scripts/index/changing.php");
+	include("scripts/index/voted.php");
 }
 
 ?>
